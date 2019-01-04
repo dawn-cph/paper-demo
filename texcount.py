@@ -68,25 +68,28 @@ def make_plot(log_file='word_count.csv', plot_file='word_count.png', verbose=Tru
     # by log
     ax = fig.add_subplot(121)
     ax.plot(tab['Words in text'], label='# Words', color=colors[0], marker='.', alpha=0.5)
-    ax.set_ylim(-0.1, np.maximum(last_count,1)*1.2)
+    ax.set_ylim(-0.1, np.maximum(last_count,1)*1.3)
     ax.set_xlabel('Log #')
     ax.set_ylabel('Word count')
     
+    repo = os.path.split(os.getcwd())[-1]
+    ax.text(0.05, 0.97, '{0} - {1}'.format(repo, tab['File'][0]), transform=ax.transAxes, ha='left', va='top')
+    
     axf = ax.twinx()
     axf.plot(tab['Number of floats/tables/figures'], label='# Words', color=colors[2], marker='.', alpha=0.5)
-    axf.set_ylim(-0.1, np.maximum(last_float,1)*1.1)
+    axf.set_ylim(-0.1, np.maximum(last_float,1)*1.2)
     axf.set_yticklabels([])
     
     # By date    
     ax = fig.add_subplot(122)
     ax.plot_date(t.plot_date, tab['Words in text'], label='# Words', color=colors[0], marker='.', alpha=0.5, linestyle='-')
-    ax.set_ylim(-0.1, np.maximum(last_count,1)*1.2)
+    ax.set_ylim(-0.1, np.maximum(last_count,1)*1.3)
     ax.set_xlabel('Date')
     ax.set_yticklabels([])
     
     axf = ax.twinx()
     axf.plot_date(t.plot_date, tab['Number of floats/tables/figures'], label='# Words', color=colors[2], marker='.', linestyle='-', alpha=0.5)
-    axf.set_ylim(-0.1, np.maximum(last_float,1)*1.1)
+    axf.set_ylim(-0.1, np.maximum(last_float,1)*1.2)
     axf.set_ylabel('# Floats')
     
     rule = rrulewrapper(DAILY, interval=7)#, byeaster=1, interval=5)
