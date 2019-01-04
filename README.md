@@ -13,17 +13,17 @@ Demo paper for DaPaWriMo with logging tools.
 
 1) Check that `texcount.pl` runs without errors:
 
-   `./texcount.pl ms.tex`
+    `./texcount.pl ms.tex`
    
 2) Log the word count status to a file & plot):
 
-  `./texcount.py ms.tex [-plot-only] [-log-only]`
+    `./texcount.py ms.tex [-plot-only] [-log-only]`
   
 3) Commit and push the updated logs (and of course your manuscript, figures, etc. as well)
 
-  `git commit -m "New logs" word_count.csv word_count.log`
+    `git commit -m "[comment, e.g. update logs]" word_count.csv word_count.log`
   
-  `git push`
+    `git push`
 
 4) Get a coffee and cheer on your colleagues
   
