@@ -46,6 +46,8 @@ def make_plot(log_file='word_count.csv', plot_file='word_count.png', verbose=Tru
     """
     import datetime
     import matplotlib.pyplot as plt
+    import matplotlib
+    
     from matplotlib.dates import (DAILY, YEARLY, WEEKLY, DateFormatter,
                                   rrulewrapper, RRuleLocator, drange)
     
@@ -53,6 +55,9 @@ def make_plot(log_file='word_count.csv', plot_file='word_count.png', verbose=Tru
     
     from astropy.table import Table
     import astropy.time
+    
+    font = {'size'   : 9}
+    matplotlib.rc('font', **font)
         
     tab = Table.read(log_file)
     t = astropy.time.Time(tab['time'])
@@ -63,7 +68,7 @@ def make_plot(log_file='word_count.csv', plot_file='word_count.png', verbose=Tru
     
     plt.ioff()
     
-    fig = plt.figure(figsize=[8, 4])
+    fig = plt.figure(figsize=[8, 2])
     
     # by log
     ax = fig.add_subplot(121)
@@ -94,7 +99,7 @@ def make_plot(log_file='word_count.csv', plot_file='word_count.png', verbose=Tru
     
     rule = rrulewrapper(DAILY, interval=7)#, byeaster=1, interval=5)
     loc = RRuleLocator(rule)
-    formatter = DateFormatter('%d.%m.%y')
+    formatter = DateFormatter('%d.%m')
     
     ax.xaxis.set_major_locator(loc)
     ax.xaxis.set_major_formatter(formatter)
