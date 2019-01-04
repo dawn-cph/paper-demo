@@ -1,0 +1,6 @@
+time, File, Encoding, Words in text, Words in headers, Words outside text (captions etc.), Number of headers, Number of floats/tables/figures, Number of math inlines, Number of math displayed
+2019-01-04 00:40:59, ms.tex, ascii, 242, 10, 0, 3, 0, 16, 0
+2019-01-04 00:41:01, ms.tex, ascii, 242, 10, 0, 3, 0, 16, 0
+2019-01-14 00:41:01, ms.tex, ascii, 292, 10, 0, 3, 1, 16, 0
+2019-01-28 00:41:01, ms.tex, ascii, 1292, 10, 0, 3, 1, 16, 0
+2019-02-28 00:41:01, ms.tex, ascii, 2292, 10, 0, 3, 3, 16, 0
